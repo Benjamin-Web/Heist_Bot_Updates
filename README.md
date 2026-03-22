@@ -66,4 +66,12 @@ Dieses Projekt lizenziert unter der ISC Lizenz.
 
 ---
 
+## 🛠️ Roadmap (Geplante Features)
+
+- [ ] **🎫 Neues Raffle-System:** Ein faires und spannendes Gewinnspiel-System für deine Zuschauer.
+- [ ] **✨ Erweiterte Heist-Effekte:** Noch packendere Animationen und Soundeffekte für den Banküberfall.
+- [ ] **📊 Erweiterte Statistiken:** Detaillierte Auswertungen der erfolgreichsten Heists im Dashboard.
+
+---
+
 *Entwickelt mit ❤️ für die Twitch-Community.*
