@@ -1,32 +1,69 @@
-# 🚨 Heist Bot - Der ultimative Twitch-Bankraub 💰
+# 🦹‍♂️ Heist Bot - Der ultimative Twitch-Raubzug!
 
-![Heist Bot Logo](file:///c:/Users/benja/Desktop/Heist_bot/build/icon.png)
-
-Willkommen beim **Heist Bot**! Mach deinen Twitch-Stream interaktiver und spannender als je zuvor. Lass deine Zuschauer ihre hart verdienten Batzen riskieren, um bei epischen Banküberfällen den Jackpot zu knacken!
+Ein professioneller Twitch-Bot für Streamer, der Interaktion durch ein spannendes "Banküberfall"-Minispiel fördert. Mit integriertem Dashboard, Overlay-System und automatischen Updates.
 
 ---
 
 ## ✨ Features
 
-*   **🎰 Spannendes Heist-System**: Zuschauer können mit `!raub <Einsatz>` eigene Überfälle starten oder sich anderen anschließen.
-*   **📈 Dynamische Multiplikatoren**: Je mehr Leute mitmachen, desto höher die Beute – aber auch das Risiko!
-*   **📺 Cooles Overlay**: Ein schickes, animiertes Overlay für OBS mit Soundeffekten (SEK, Polizei, Sieg-Jingles).
-*   **🏆 Globales Leaderboard**: Wer ist der erfolgreichste Räuber in deinem Stream?
-*   **⚡ Live-Updates**: Der Bot hält sich automatisch auf dem neuesten Stand – kein manuelles Updaten nötig.
+- **🎮 Heist Minispiel:** Zuschauer können mit `!raub <bet>` gemeinsam Banken überfallen und fiktive Währung gewinnen.
+- **🌍 Mehrsprachigkeit:** Volle Unterstützung für **Deutsch** und **Englisch**. Die Sprache lässt sich im Dashboard mit einem Klick umschalten.
+- **✨ Dynamische Räuber-Parade:** Zuschauer erscheinen während der Joining-Phase als animierte Räuber-Charaktere im OBS Overlay, laufen am unteren Bildschirmrand entlang und interagieren mit verschiedenen Animationen.
+- **📊 Live Dashboard:** Verwalte Kanaleinstellungen, OAuth-Token und Belohnungen in Echtzeit über eine moderne Oberfläche.
+- **🖥️ OBS Overlay:** Integrierter WebSocket-Server für visuelle und akustische Benachrichtigungen im Stream (Intro, Sieg, Niederlage, SWAT-Einsatz).
+- **💰 Treue-System:** Automatische Belohnungen für Zuseh-Zeit (Watch-Time) und Subs (Tier 1, 2 & 3).
+- **🏆 Leaderboard:** Behalte den Überblick über die erfolgreichsten Räuber deines Kanals.
+- **🚀 Auto-Updates:** Der Bot prüft beim Start automatisch auf neue Versionen und kann sich selbst aktualisieren.
+- **💾 Lokale Datenbank:** Alle Daten werden effizient in einer lokalen SQLite-Datenbank gespeichert.
 
 ---
 
-## 🚀 Installation & Start
+### Installation & Setup
 
-1.  **Herunterladen**: Lade die neueste `HeistBot Setup.exe` aus dem [Releases Bereich](https://github.com/Benjamin-Web/Heist_Bot_Updates/releases) herunter.
-2.  **Installieren**: Öffne die Datei und folge den Anweisungen.
-3.  **Verbinden**: Starte den Bot, gib deinen Twitch-Kanal und OAuth-Token ein und leg los!
-4.  **Overlay einbinden**: Füge das Overlay als Browser-Quelle in OBS hinzu (`http://localhost:8765`).
+1. **Herunterladen:** Lade die neueste `HeistBot-Setup-x.x.x.exe` von der **[Releases-Seite](https://github.com/Benjamin-Web/Heist_Bot_Updates/releases)** herunter.
+2. **Installieren:** Führe die `.exe` aus und folge den Anweisungen.
+3. **Konfigurieren:** Starte den Bot, gib deinen Kanal und dein Token ein und klicke auf "Verbinden". ✨
 
 ---
 
-## 🛠 Support & Community
+## 🛠️ Konfiguration
 
-Hast du Fragen oder Vorschläge? Schau in unserem Stream vorbei oder eröffne ein Issue hier im Repository!
+1. Starte den Bot und trage deinen **Kanalnamen** sowie dein **OAuth-Token** im Dashboard ein.
+2. Definiere den Namen deiner **Währung** (z.B. "Batzen", "Coins", "Dukaten").
+3. Stelle die Belohnungen für Watch-Time und Subs ein.
+4. Klicke auf **Verbinden**, um den Bot live zu schalten.
 
-**Viel Erfolg beim nächsten Ding! 🚓💨**
+### OBS Overlay hinzufügen
+1. Erstelle eine neue **Browser-Quelle** in OBS.
+2. URL: `http://localhost:8765/` (Standard-Port)
+3. Breite: `1920`, Höhe: `1080`
+4. Aktiviere "Audio über OBS steuern", falls gewünscht.
+
+---
+
+## 🎮 Zuschauer-Befehle
+
+- `!raub <einsatz>` - Startet einen Banküberfall oder nimmt an einem bestehenden teil.
+- `!coins` (oder dein Währungsname) - Zeigt den aktuellen Kontostand an.
+- `!topliste` - Zeigt die Top 5 Räuber im Chat an.
+- `!top` - (Mod/Broadcaster) Zeigt die Top 10 Bestenliste an.
+- `!heistbot` - Zeigt Informationen zur aktuellen Bot-Version.
+
+---
+
+## 💻 Tech Stack
+
+- **Framework:** Electron
+- **Twitch API:** tmi.js
+- **Grafik/Physik:** Phaser 3 & GSAP
+- **Datenbank:** SQLite
+
+---
+
+## 📄 Lizenz
+
+Dieses Projekt lizenziert unter der ISC Lizenz.
+
+---
+
+*Entwickelt mit ❤️ für die Twitch-Community.*
