@@ -1,76 +1,78 @@
-# 🦹‍♂️ Heist Bot - Der ultimative Twitch-Raubzug!
+# 🦹‍♂️ Heist Bot für Twitch
 
-Ein professioneller Twitch-Bot für Streamer, der Interaktion durch ein spannendes "Banküberfall"-Minispiel fördert. Mit integriertem Dashboard, Overlay-System und automatischen Updates.
-
----
-
-## ✨ Features
-
-- **🎮 Heist Minispiel:** Zuschauer können mit `!raub <bet>` gemeinsam Banken überfallen und fiktive Währung gewinnen.
-- **🌍 Mehrsprachigkeit:** Volle Unterstützung für **Deutsch** und **Englisch**. Die Sprache lässt sich im Dashboard mit einem Klick umschalten.
-- **✨ Dynamische Räuber-Parade:** Zuschauer erscheinen während der Joining-Phase als animierte Räuber-Charaktere im OBS Overlay, laufen am unteren Bildschirmrand entlang und interagieren mit verschiedenen Animationen.
-- **📊 Live Dashboard:** Verwalte Kanaleinstellungen, OAuth-Token und Belohnungen in Echtzeit über eine moderne Oberfläche.
-- **🖥️ OBS Overlay:** Integrierter WebSocket-Server für visuelle und akustische Benachrichtigungen im Stream (Intro, Sieg, Niederlage, SWAT-Einsatz).
-- **💰 Treue-System:** Automatische Belohnungen für Zuseh-Zeit (Watch-Time) und Subs (Tier 1, 2 & 3).
-- **🏆 Leaderboard:** Behalte den Überblick über die erfolgreichsten Räuber deines Kanals.
-- **🚀 Auto-Updates:** Der Bot prüft beim Start automatisch auf neue Versionen und kann sich selbst aktualisieren.
-- **💾 Lokale Datenbank:** Alle Daten werden effizient in einer lokalen SQLite-Datenbank gespeichert.
+Ein Twitch-Bot, mit dem deine Zuschauer gemeinsam virtuelle Banküberfälle starten können. Kommt mit allem, was du brauchst, um mehr Action in den Chat zu bringen – inklusive Dashboard, Mini-Game und einem OBS-Overlay für Sounds und Animationen.
 
 ---
 
-### Installation & Setup
+## ✨ Was kann der Bot?
 
-1. **Herunterladen:** Lade die neueste `HeistBot-Setup-x.x.x.exe` von der **[Releases-Seite](https://github.com/Benjamin-Web/Heist_Bot_Updates/releases)** herunter.
-2. **Installieren:** Führe die `.exe` aus und folge den Anweisungen.
-3. **Konfigurieren:** Starte den Bot, gib deinen Kanal und dein Token ein und klicke auf "Verbinden". ✨
+- **🎮 Banküberfall-Minispiel:** Mit `!raub <einsatz>` können Zuschauer zusammenarbeiten, um virtuelles Geld zu erbeuten.
+- **🌍 Zweisprachig:** Komplett auf Deutsch und Englisch verfügbar (einfach im Dashboard umschalten).
+- **✨ Animierte Räuber im Stream:** Wer beim Heist mitmacht, taucht als kleiner, animierter Charakter im OBS-Overlay auf und läuft durchs Bild.
+- **📊 Dashboard:** Eine leichte Benutzeroberfläche, um den Bot, deine Währung und Belohnungen schnell einzustellen.
+- **🖥️ OBS-Overlay:** Bringt Sounds und Animationen direkt in deinen Stream (inklusive SWAT-Alarm, Siege oder Fails).
+- **💰 Belohnungssystem:** Vergib ganz automatisch Coins fürs Zuschauen (Watch-Time) oder für Subs.
+- **🏆 Toplisten:** Finde heraus, wer im Chat am meisten abgestaubt hat.
+- **🚀 Auto-Updates:** Der Bot checkt beim Start von selbst, ob es eine neue Version gibt.
+- **💾 Lokale Speicherung:** Alle Daten (wie der Kontostand der User) bleiben rein lokal bei dir auf dem Rechner in einer SQLite-Datenbank.
 
 ---
 
-## 🛠️ Konfiguration
+## 🚀 Installation & Setup
 
-1. Starte den Bot und trage deinen **Kanalnamen** sowie dein **OAuth-Token** im Dashboard ein.
-2. Definiere den Namen deiner **Währung** (z.B. "Batzen", "Coins", "Dukaten").
-3. Stelle die Belohnungen für Watch-Time und Subs ein.
-4. Klicke auf **Verbinden**, um den Bot live zu schalten.
+1. **Download:** Hol dir die aktuellste `HeistBot-Setup-x.x.x.exe` von den **[Releases](https://github.com/Benjamin-Web/Heist_Bot_Updates/releases)**.
+2. **Installieren:** Einfach ausführen und den Anweisungen folgen.
+3. **Start:** Bot öffnen, Twitch-Kanal und OAuth-Token eintragen, fertig!
 
-### OBS Overlay hinzufügen
-1. Erstelle eine neue **Browser-Quelle** in OBS.
-2. URL: `http://localhost:8765/` (Standard-Port)
+---
+
+## 🛠️ Einrichten
+
+1. Starte den Bot und trage im Dashboard deinen **Kanalnamen** und das **OAuth-Token** ein.
+2. Denk dir einen Namen für deine **Währung** aus (z.B. "Batzen", "Coins", "Dukaten").
+3. Stell ein, wie viele Coins Zuschauer für Watch-Time und Subs bekommen sollen.
+4. Klick auf **Verbinden**, um loszulegen.
+
+### OBS-Overlay hinzufügen
+1. Erstelle in OBS eine neue **Browser-Quelle**.
+2. URL: `http://localhost:8765/` (das ist der Standard-Port)
 3. Breite: `1920`, Höhe: `1080`
-4. Aktiviere "Audio über OBS steuern", falls gewünscht.
+4. Setze den Haken bei "Audio über OBS steuern", wenn du die Lautstärke direkt in OBS regeln willst.
 
 ---
 
-## 🎮 Zuschauer-Befehle
+## 💬 Chat-Befehle
 
-- `!raub <einsatz>` - Startet einen Banküberfall oder nimmt an einem bestehenden teil.
-- `!coins` (oder dein Währungsname) - Zeigt den aktuellen Kontostand an.
-- `!topliste` - Zeigt die Top 5 Räuber im Chat an.
-- `!top` - (Mod/Broadcaster) Zeigt die Top 10 Bestenliste an.
-- `!heistbot` - Zeigt Informationen zur aktuellen Bot-Version.
+- `!raub <einsatz>` / `!heist <bet>` – Startet einen Heist oder tritt einem bei.
+- `!coins` / `!münzen` (oder dein eigener Währungsname) – Zeigt den aktuellen Kontostand des Users an.
+- `!topliste` / `!leaderboard` – Zeigt die Top 5 der reichsten Räuber im Chat.
+- `!top` – (Für Mods/Streamer) Spuckt die Top 10 Bestenliste im Chat aus.
+- `!give @User <Menge>` / `!schenken @Nutzer <Menge>` – Geld an andere im Chat verschenken.
+- `!heistbot` / `!raubbot` – Zeigt Infos zur aktuellen Version des Bots.
 
 ---
 
 ## 💻 Tech Stack
 
+Falls es dich interessiert, was unter der Haube steckt:
 - **Framework:** Electron
 - **Twitch API:** tmi.js
-- **Grafik/Physik:** Phaser 3 & GSAP
+- **Grafik/Physik im Overlay:** Phaser 3 & GSAP
 - **Datenbank:** SQLite
 
 ---
 
 ## 📄 Lizenz
 
-Dieses Projekt lizenziert unter der ISC Lizenz.
+Dieses Projekt steht unter der ISC Lizenz.
 
 ---
 
-## 🛠️ Roadmap (Geplante Features)
+## 📅 Roadmap (Geplante Features)
 
-- [ ] **🎫 Neues Raffle-System:** Ein faires und spannendes Gewinnspiel-System für deine Zuschauer.
-- [ ] **✨ Erweiterte Heist-Effekte:** Noch packendere Animationen und Soundeffekte für den Banküberfall.
-- [ ] **📊 Erweiterte Statistiken:** Detaillierte Auswertungen der erfolgreichsten Heists im Dashboard.
+- [ ] **🎫 Raffle-System:** Ein Gewinnspiel-System für den Chat.
+- [ ] **✨ Mehr Heist-Effekte:** Noch detailliertere Animationen und Sounds während des Überfalls.
+- [ ] **📊 Bessere Statistiken:** Auswertungen der erfolgreichsten Raubzüge direkt im Dashboard.
 
 ---
 
