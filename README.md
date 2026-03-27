@@ -1,6 +1,6 @@
-# 🦹‍♂️ Heist Bot für Twitch
+# 🦹‍♂️ Heist Bot - Der ultimative Twitch-Raubzug!
 
-Ein Twitch-Bot, mit dem deine Zuschauer gemeinsam virtuelle Banküberfälle starten können. Kommt mit allem, was du brauchst, um mehr Action in den Chat zu bringen – inklusive Dashboard, Mini-Game und einem OBS-Overlay für Sounds und Animationen.
+Moin! Ich hab hier mal was zusammengebastelt, weil ich Bock auf ein interaktives Heist-Game für Twitch hatte. Hat mich echt einige Nächte gekostet, aber ich find's jetzt eigentlich ziemlich cool.
 
 ---
 
@@ -75,5 +75,6 @@ Dieses Projekt steht unter der ISC Lizenz.
 - [ ] **📊 Bessere Statistiken:** Auswertungen der erfolgreichsten Raubzüge direkt im Dashboard.
 
 ---
+Ist alles noch ein bisschen "Work in Progress", aber ich find's echt stabil bisher. Falls ihr Bugs findet oder Ideen habt, haut einfach raus. Viel Spaß beim Rauben! 💰✨
 
 *Entwickelt mit ❤️ für die Twitch-Community.*
