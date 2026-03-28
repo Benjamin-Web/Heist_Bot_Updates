@@ -80,6 +80,8 @@ Dieses Projekt lizenziert unter der ISC Lizenz.
 
 ---
 
+Discord: https://discord.gg/FV83Fcu3V3
+
 *Entwickelt mit ❤️ für die Twitch-Community.*
 
 ---
@@ -160,6 +162,8 @@ This project is licensed under the ISC License.
 - [ ] **📊 Advanced Statistics:** Detailed analysis of the most successful heists in the dashboard.
 
 ---
+
+Discord: https://discord.gg/FV83Fcu3V3
 
 *Developed with ❤️ for the Twitch community.*
 
