@@ -57,7 +57,7 @@ Ein professioneller Twitch-Bot für Streamer, der Interaktion durch spannende Mi
 - **Excluded Accounts:** Schließe Bots/Accounts aus der Topliste aus
 - **Erweiterte Statistiken:** Detaillierte Heist- und Raffle-Analysen
 - **Zombie-Hunde Modus:** Alternativer Spielmodus
-- Aktivierung über Ko-fi Code
+- Aktivierung über Ko-fi mit euren Twitch: [Namen]
 
 ### 💰 Währung & Treue
 - Automatische Watch-Time-Belohnung (alle 5 Min)
@@ -198,7 +198,7 @@ A professional Twitch bot for streamers that promotes interaction through exciti
 - **Excluded Accounts:** Exclude bots/accounts from the leaderboard
 - **Extended Statistics:** Detailed heist and raffle analysis
 - **Zombie Dog Mode:** Alternative game mode
-- Activation via Ko-fi code
+- Activation via Ko-fi with your Twitch: [Name]
 
 ### 💰 Currency & Loyalty
 - Automatic watch-time rewards (every 5 min)
