@@ -1,285 +1,231 @@
-# 🦹‍♂️ Heist Bot - Der ultimative Twitch-Raubzug!
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Benjamin-Web/heist_bot/main/renderer/assets/heist-icon.png" alt="Heist Bot Logo" width="120" height="120" style="border-radius: 20px;" />
+</p>
 
-[Deutsch](#deutsch) | [English](#english)
+<h1 align="center">Heist Bot</h1>
 
----
+<p align="center">
+  <strong>The All-in-One Twitch Stream Management Platform</strong><br/>
+  <sub>Interactive games · Chat moderation · Custom commands · Timer automation · One-click Twitch login</sub>
+</p>
 
-<a name="deutsch"></a>
-# Deutsch
+<p align="center">
+  <a href="https://github.com/Benjamin-Web/Heist_Bot_Updates/releases/latest"><img src="https://img.shields.io/github/v/release/Benjamin-Web/Heist_Bot_Updates?style=for-the-badge&color=9146ff&label=Download" alt="Latest Release" /></a>
+  <img src="https://img.shields.io/badge/platform-Windows-0078D6?style=for-the-badge&logo=windows" alt="Platform" />
+  <img src="https://img.shields.io/badge/license-ISC-green?style=for-the-badge" alt="License" />
+</p>
 
-Ein professioneller Twitch-Bot für Streamer, der Interaktion durch spannende Minispiele fördert. Mit Banküberfall-System, Raffle-Verlosungen, animiertem OBS-Overlay, Statistik-Dashboard und automatischen Updates – alles in einer Electron-App.
-
----
-
-## ✨ Features
-
-### 🎮 Heist-System
-- Zuschauer starten mit `!raub <Einsatz>` einen Banküberfall oder schließen sich an
-- Je mehr Leute mitmachen, desto höher der Multiplikator – aber auch das Risiko
-- Polizei-Umzingelung bei Niederlage, SEK-Einsatz inklusive
-- 60 Sekunden Joining-Phase mit animierten Räuber-Charakteren im Overlay
-- **🧟 Zombie-Hunde Modus:** Alternativer Spielmodus (Wurstfabrik-Thema) als PRO Feature
-
-### 🎫 Raffle-System
-- Verlosungen direkt aus dem Dashboard starten
-- Zuschauer kaufen mit `!ticket <Anzahl>` Lose
-- Animierte Gewinnziehung im Overlay mit Claim-Mechanik (30 Sek. Timeout)
-- Einstellbar: Ticket-Preis, Max-Tickets pro User
-- **Sub-Only Modus** mit optionaler Mindest-Abo-Dauer
-- Redraw-Option falls Gewinner nicht reagiert
-
-### 🖥️ OBS Overlay
-- Animierter Räuber-Lauf am unteren Bildschirmrand (22 verschiedene Skins!)
-- Bank-Gebäude, Sirenen, Soundeffekte
-- Konfetti bei Raffle-Gewinn, Polizei-Animation bei Heist-Niederlage
-- Sauber transparent für OBS – einfach als Browser-Quelle einbinden
-
-### 📊 Statistik-Dashboard
-- Heist-Statistiken: Gesamtzahl, Winrate, Ø Teilnehmer, Gesamteinsatz, Gewinn/Verlust
-- Raffle-Statistiken: Gesamtzahl, Claim-Quote, verteilte Preise
-- Winrate-Trend als Balkendiagramm (filterbar: 7/14/30/90 Tage oder Gesamtzeit)
-- Letzte Heists & Raffles im Überblick
-- Detaillierte Viewer-Statistiken
-
-### 📋 Dashboard
-- Alles auf einen Blick: Heist-Status, Leaderboard, Event-Log
-- Manuelle Währungsverteilung an einzelne Nutzer oder alle
-- Spiel-Einstellungen: Währungsname, Watch-Time-Belohnung, Sub-Boni (Tier 1/2/3)
-- Auto-Updates direkt in der App
-
-### 🌍 Mehrsprachigkeit
-- **5 Sprachen:** Deutsch, English, 中文 (Chinesisch), Español, Русский
-- Sprache im Dashboard mit einem Klick umschaltbar
-- OBS-Overlay passt sich automatisch an
-
-### ⭐ PRO Features
-- **Custom Commands:** Erstelle eigene Bot-Befehle (!ad, !discord, !sound, etc.)
-- **Excluded Accounts:** Schließe Bots/Accounts aus der Topliste aus
-- **Erweiterte Statistiken:** Detaillierte Heist- und Raffle-Analysen
-- **Zombie-Hunde Modus:** Alternativer Spielmodus
-- Aktivierung über Ko-fi mit euren Twitch: [Namen]
-
-### 💰 Währung & Treue
-- Automatische Watch-Time-Belohnung (alle 5 Min)
-- Sub-Boni für Tier 1, 2 und 3
-- Schenkfunktion zwischen Zuschauern (`!give`)
-- Lokale SQLite-Datenbank – kein externer Server nötig
-
-### 🚀 Weitere Features
-- **Auto-Updates:** Der Bot prüft beim Start automatisch auf neue Versionen
-- **Login-System:** E-Mail-basierte Registrierung für PRO-Features
-- **💾 Lokale Datenbank:** Alle Spielerdaten bleiben sicher auf deinem PC
+<p align="center">
+  <a href="https://www.heist-bot.pro">🌐 Website</a> •
+  <a href="https://discord.gg/FV83Fcu3V3">💬 Discord</a> •
+  <a href="https://ko-fi.com/ronincannons">☕ Ko-fi / PRO</a>
+</p>
 
 ---
 
-## 🚀 Installation & Setup
+## 🚀 What is Heist Bot?
 
-1. **Herunterladen:** Lade die neueste `HeistBot-Setup-x.x.x.exe` von der **[Releases-Seite](https://github.com/Benjamin-Web/Heist_Bot_Updates/releases)** herunter.
-2. **Installieren:** Führe die `.exe` aus und folge den Anweisungen.
-3. **Konfigurieren:** Starte den Bot, gib deinen Kanal und dein Token ein und klicke auf "Verbinden". ✨
+Heist Bot is a **professional desktop application** for Twitch streamers that replaces multiple tools in one package. Run interactive heist games, moderate your chat, set up custom commands, automate timed messages — all from a single, beautiful dashboard.
 
-### OBS Overlay hinzufügen
-1. Erstelle eine neue **Browser-Quelle** in OBS.
-2. URL: `http://localhost:8765/?lang=de` (Standard-Port)
-3. Breite: `1920`, Höhe: `1080`
-4. Aktiviere "Audio über OBS steuern", falls gewünscht.
-
-OAuth-Token bekommst du auf [twitchtokengenerator.com](https://twitchtokengenerator.com/).
+> **No more juggling StreamElements, Nightbot, and separate bots.** Heist Bot handles it all.
 
 ---
 
-## 🎮 Chat-Befehle
+## ⚡ Download & Install
 
-| Befehl | Beschreibung |
-|--------|-------------|
-| `!raub <Einsatz>` / `!heist <Bet>` | Startet einen Banküberfall oder tritt einem bei |
-| `!ticket <Anzahl>` / `!raffle` / `!lose` | Kauft Lose für die aktuelle Verlosung |
-| `!coins` / `!münzen` / `!<Währungsname>` | Zeigt den aktuellen Kontostand |
-| `!topliste` / `!leaderboard` | Zeigt die Top 5 Räuber |
-| `!top` | (Mod/Broadcaster) Zeigt die Top 10 |
-| `!give @User <Betrag>` / `!schenken` | Verschenke Währung an andere |
-| `!heistbot` / `!raubbot` / `!botinfo` | Zeigt Bot-Version |
+1. **Download** the latest **[HeistBot-Setup-1.5.1.exe](https://github.com/Benjamin-Web/Heist_Bot_Updates/releases/latest)** from the Releases page
+2. **Run** the installer and follow the setup wizard
+3. **Launch** Heist Bot and click **"Login with Twitch"**
+4. You're live! 🎉
+
+> The app checks for updates automatically on every launch. You'll be notified when a new version is available.
 
 ---
 
-## 💻 Tech Stack
+## ✨ Core Features
 
-- **Framework:** Electron
-- **Twitch API:** tmi.js
-- **Grafik/Physik:** Phaser 3 & GSAP
-- **Datenbank:** SQLite (lokal) + Supabase (PRO Backend)
-- **Backend:** Express.js (PRO Features)
+### 🎮 Interactive Heist Game
+Viewers pool their currency and rob banks together. Win big or lose it all — with full animated OBS overlay, sound effects, and a dynamic robber parade.
 
----
+### 🔐 One-Click Twitch Login
+No more copy-pasting OAuth tokens. Click **"Login with Twitch"**, authorize, done. Channel, token, and Helix API are auto-configured.
 
-## 🗺️ Roadmap
+### 🛡️ Chat Moderation (Spam Filter)
+Built-in protection against caps spam, emoji floods, repeated messages, and links from non-subscribers. Fully configurable thresholds and timeouts.
 
-- [x] 🎮 Heist-System mit dynamischen Multiplikatoren
-- [x] 🖥️ Animiertes OBS-Overlay (22 Skins)
-- [x] 🚨 Polizei-Umzingelung & SEK-Einsatz
-- [x] 🎫 Raffle-System mit Overlay-Animation
-- [x] 📊 Erweiterte Statistiken im Dashboard
-- [x] 🌍 5 Sprachen (DE, EN, ZH, ES, RU)
-- [x] ⭐ PRO Features (Custom Commands, Excluded Accounts)
-- [x] 🧟 Zombie-Hunde Spielmodus
-- [ ] 🔊 Custom Sound-Upload
-- [ ] 🎨 Weitere Overlay-Themes
+### ⌨️ Custom Chat Commands
+Create unlimited custom commands (`!discord`, `!socials`, `!ad`, etc.) with support for text responses, URLs, and sound alerts.
 
----
-
-## 🤝 Mitmachen & Support
-
-- 🐛 Bug gefunden? → [Issue erstellen](https://github.com/Benjamin-Web/Heist_Bot_Updates/issues)
-- 💬 Fragen? → [Discord Server](https://discord.gg/FV83Fcu3V3)
-- ☕ Unterstützen? → [Ko-fi](https://ko-fi.com/ronincannons)
-
-## 📄 Lizenz
-
-Dieses Projekt ist lizenziert unter der ISC Lizenz.
-
-Aktuell: **v1.3.7**
-
----
-
-*Entwickelt mit ❤️ für die Twitch-Community.*
-
----
-
-<a name="english"></a>
-# English
-
-A professional Twitch bot for streamers that promotes interaction through exciting mini-games. With a bank robbery system, raffle giveaways, animated OBS overlay, statistics dashboard, and automatic updates – all in one Electron app.
-
----
-
-## ✨ Features
-
-### 🎮 Heist System
-- Viewers start a bank heist with `!raub <bet>` or join one in progress
-- More participants = higher multiplier, but also higher risk
-- Police surround animation on loss, SWAT intervention included
-- 60-second joining phase with animated robber characters in the overlay
-- **🧟 Zombie Dog Mode:** Alternative game mode (sausage factory theme) as PRO feature
+### ⏱️ Timer Commands
+Automated recurring chat messages at custom intervals. Perfect for promoting Discord, social media, or game commands — no external tool needed.
 
 ### 🎫 Raffle System
-- Start giveaways directly from the dashboard
-- Viewers buy tickets with `!ticket <amount>`
-- Animated winner draw in the overlay with claim mechanic (30 sec timeout)
-- Configurable: ticket price, max tickets per user
-- **Sub-Only Mode** with optional minimum subscription duration
-- Redraw option if the winner doesn't respond
-
-### 🖥️ OBS Overlay
-- Animated robber parade at the bottom of the screen (22 different skins!)
-- Bank building, sirens, sound effects
-- Confetti on raffle win, police animation on heist loss
-- Clean transparent background for OBS – just add as browser source
+Run fair giveaways with ticket pricing, sub-only mode, minimum subscription requirements, and automatic redraw on unclaimed wins.
 
 ### 📊 Statistics Dashboard
-- Heist statistics: total count, win rate, avg. participants, total wagered, profit/loss
-- Raffle statistics: total count, claim rate, distributed prizes
-- Win rate trend as bar chart (filterable: 7/14/30/90 days or all-time)
-- Recent heists & raffles at a glance
-- Detailed viewer statistics
+Track heist win rates, participation trends, raffle history, and top winners with interactive charts and filters.
 
-### 📋 Dashboard
-- Everything at a glance: heist status, leaderboard, event log
-- Manual currency distribution to individual users or everyone
-- Game settings: currency name, watch-time reward, sub bonuses (Tier 1/2/3)
-- Auto-updates built right in
+### 🧟 Zombie Dog Mode
+An alternative game mode where zombie dogs attack a sausage factory. Different mechanics, custom Spine animations, and a unique theme.
 
-### 🌍 Multi-Language
-- **5 Languages:** Deutsch, English, 中文 (Chinese), Español, Русский
-- Switch language in the dashboard with one click
-- OBS overlay adapts automatically
+### 🌍 5 Languages
+Full localization for **German**, **English**, **Spanish**, **Russian**, and **Chinese** — switchable with one click.
 
-### ⭐ PRO Features
-- **Custom Commands:** Create your own bot commands (!ad, !discord, !sound, etc.)
-- **Excluded Accounts:** Exclude bots/accounts from the leaderboard
-- **Extended Statistics:** Detailed heist and raffle analysis
-- **Zombie Dog Mode:** Alternative game mode
-- Activation via Ko-fi with your Twitch: [Name]
+### 💰 Loyalty System
+Automatic currency rewards for watch time and subscriptions (Tier 1, 2 & 3). Viewers earn, bet, and compete.
 
-### 💰 Currency & Loyalty
-- Automatic watch-time rewards (every 5 min)
-- Sub bonuses for Tier 1, 2, and 3
-- Gift system between viewers (`!give`)
-- Local SQLite database – no external server needed
-
-### 🚀 More Features
-- **Auto-Updates:** The bot automatically checks for new versions at startup
-- **Login System:** Email-based registration for PRO features
-- **💾 Local Database:** All player data stays safe on your PC
+### 🚀 Auto-Updates
+The bot automatically checks for updates at startup and guides you through one-click installs.
 
 ---
 
-## 🚀 Installation & Setup
+## 🛠️ Setup Guide
 
-1. **Download:** Grab the latest `HeistBot-Setup-x.x.x.exe` from the **[Releases Page](https://github.com/Benjamin-Web/Heist_Bot_Updates/releases)**.
-2. **Install:** Run the `.exe` and follow the instructions.
-3. **Configure:** Start the bot, enter your channel and token, and click "Connect". ✨
+### OBS Overlay
+1. Add a **Browser Source** in OBS
+2. Set the URL to `http://localhost:8765/?lang=en` (or `?lang=de` for German)
+3. Resolution: **1920 × 1080**
+4. ✅ Enable "Control audio via OBS"
 
-### Add OBS Overlay
-1. Create a new **Browser Source** in OBS.
-2. URL: `http://localhost:8765/?lang=en` (Default Port)
-3. Width: `1920`, Height: `1080`
-4. Enable "Control audio via OBS" if desired.
+### Spam Filter
+Configure directly in the **Settings** tab of the dashboard:
 
-Get your OAuth token at [twitchtokengenerator.com](https://twitchtokengenerator.com/).
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Max Caps | 70% | Uppercase threshold before timeout |
+| Max Emojis | 8 | Maximum emojis per message |
+| Repeat Threshold | 3 | Identical messages within time window |
+| Link Block | On | Block links from non-subscribers |
 
 ---
 
 ## 🎮 Chat Commands
 
-| Command | Description |
-|---------|-------------|
-| `!raub <bet>` / `!heist <bet>` | Start a bank heist or join one |
-| `!ticket <amount>` / `!raffle` / `!lose` | Buy tickets for the current raffle |
-| `!coins` / `!<currency name>` | Show current balance |
-| `!topliste` / `!leaderboard` | Show top 5 robbers |
-| `!top` | (Mod/Broadcaster) Show top 10 |
-| `!give @User <amount>` | Gift currency to others |
-| `!heistbot` / `!botinfo` | Show bot version |
+| Command | Aliases | Description |
+|---------|---------|-------------|
+| `!raub <bet>` | `!heist <bet>` | Start or join a bank heist |
+| `!coins` | `!<currency>` | Check your balance |
+| `!topliste` | `!leaderboard` | Show top 5 in chat |
+| `!give @user <amount>` | — | Transfer currency to another viewer |
+| `!top` | — | (Mod) Show top 10 leaderboard |
+| `!heistbot` | `!raubbot` | Show bot version info |
 
 ---
 
-## 💻 Tech Stack
+## ⭐ PRO Membership
 
-- **Framework:** Electron
-- **Twitch API:** tmi.js
-- **Graphics/Physics:** Phaser 3 & GSAP
-- **Database:** SQLite (local) + Supabase (PRO backend)
-- **Backend:** Express.js (PRO features)
+Unlock the full potential of Heist Bot with PRO.
+
+| Feature | Free | PRO |
+|---------|:----:|:---:|
+| Heist Game & OBS Overlay | ✅ | ✅ |
+| Loyalty System | ✅ | ✅ |
+| Spam Filter | ✅ | ✅ |
+| Timer Commands | ✅ | ✅ |
+| One-Click Twitch Login | ✅ | ✅ |
+| Custom Commands | — | ✅ |
+| Excluded Accounts | — | ✅ |
+| Advanced Statistics | — | ✅ |
+| Zombie Dog Mode | — | ✅ |
+| Visual Polls | — | ✅ |
+| Heist Cooldown Config | — | ✅ |
+| Priority Support | — | ✅ |
+
+### How to Activate PRO
+1. Visit **[ko-fi.com/ronincannons](https://ko-fi.com/ronincannons)**
+2. Purchase the **"Heist Bot PRO"** membership
+3. Enter `Twitch: YourUsername` in the Order Note field
+4. PRO activates automatically within minutes ✅
+
+---
+
+## 📝 Changelog
+
+### [1.5.1] — 2026-05-15  ·  _"The Independence Update"_
+
+This release transforms Heist Bot from a heist-only game bot into a **complete stream management platform**. Streamers no longer need StreamElements or Nightbot for basic moderation, custom commands, and timed messages — Heist Bot now handles all of this natively.
+
+#### ✨ New Features
+- **One-Click Twitch Login** — StreamElements-style managed OAuth. Click "Login with Twitch", authorize, done. Channel name, token, and Helix API are auto-configured. No more manual OAuth token generation.
+- **Spam Filter** — Built-in chat moderation engine with configurable protection against caps spam, emoji floods, repeated messages, and links from non-subscribers. Timeouts are applied automatically.
+- **Custom Chat Commands** — Create unlimited custom commands (`!discord`, `!ad`, `!socials`, etc.) with support for text, URL, and sound response types. Managed through the PRO dashboard.
+- **Timer / Auto-Messages** — Automated recurring chat messages at configurable intervals (1–1440 minutes). Perfect for promoting Discord, social media, or game commands on autopilot.
+- **Twitch Helix API for All Users** — The Helix API integration (EventSub, broadcaster info, shoutouts) is now available for all users, no longer PRO-exclusive.
+- **Twitch SSO Token Exchange** — New backend endpoint for secure Twitch-to-JWT token exchange, enabling single-source-of-truth authentication across the app and backend.
+
+#### 🔧 Improvements
+- **Persistent Login State** — The header now correctly displays your Twitch username after app restart, without requiring re-authentication.
+- **Cleaner Settings UI** — Manual channel/token input fields are now hidden under a collapsible "Advanced" section. Most users will never need them thanks to One-Click Login.
+- **Exception Hardening** — Comprehensive try/catch wrappers across all new modules (bot, main process, renderer, timer service) to prevent unhandled crashes.
+- **OAuth Redirect-URI Fixes** — Resolved Twitch redirect mismatch errors for the managed login flow.
+- **Synchronized Auth State** — Login state in the header, settings card, and auth modal are now kept in sync from every possible entry point (OAuth, manual connect, app restart).
+
+#### 🐛 Bug Fixes
+- **Header Username Missing on Restart** — Fixed a `data-i18n` attribute conflict where the i18n system would overwrite the logged-in username with the generic "Login" label after the auth UI had already set it.
+- **Shoutout Without Helix** — The shoutout command no longer crashes when the Helix API is unavailable.
+
+---
+
+### [1.4.5] — 2026-05-07
+#### 🐛 Fixed
+- **Zombie Dog Game Mode:** Fixed Spine animations getting stuck in the Joining phase on certain skins.
+- **OBS Overlay Cleanup:** Fixed orphaned Spine animations on robbery resolution.
+
+### [1.4.0] — 2026-05-02
+#### ✨ Added
+- Live configuration updates without restart.
+- Self-healing PRO activation for missing database records.
+
+#### 🐛 Fixed
+- Case-insensitive user lookup for PRO activation.
+- Email normalization during registration and login.
 
 ---
 
 ## 🗺️ Roadmap
 
-- [x] 🎮 Heist system with dynamic multipliers
-- [x] 🖥️ Animated OBS overlay (22 skins)
-- [x] 🚨 Police surround & SWAT intervention
-- [x] 🎫 Raffle system with overlay animation
-- [x] 📊 Extended dashboard statistics
-- [x] 🌍 5 Languages (DE, EN, ZH, ES, RU)
-- [x] ⭐ PRO features (custom commands, excluded accounts)
-- [x] 🧟 Zombie dog game mode
-- [ ] 🔊 Custom sound upload
-- [ ] 🎨 Additional overlay themes
+| Status | Feature |
+|:------:|---------|
+| ✅ | Interactive Heist Game with OBS Overlay |
+| ✅ | Raffle System (Sub-Only, Redraw, Claim Timer) |
+| ✅ | Statistics Dashboard with Trends & Charts |
+| ✅ | 5 Languages (DE, EN, ZH, ES, RU) |
+| ✅ | PRO Membership System (Ko-fi Integration) |
+| ✅ | Zombie Dog Game Mode |
+| ✅ | Visual Polls & Tug-of-War |
+| ✅ | Twitch Helix API Integration |
+| ✅ | **One-Click Twitch OAuth Login** |
+| ✅ | **Spam Filter (Caps, Emojis, Links, Repeats)** |
+| ✅ | **Custom Chat Commands** |
+| ✅ | **Timer / Auto-Messages** |
+| 🔜 | Enhanced Heist Effects & Animations |
+| 🔜 | Additional Game Modes |
+| 🔜 | Deep EventSub Channel Points Integration |
+| 🔜 | Context-Aware AI Chat Responses |
 
 ---
 
-## 🤝 Contribute & Support
+## 🤝 Support & Community
 
-- 🐛 Found a bug? → [Open an issue](https://github.com/Benjamin-Web/Heist_Bot_Updates/issues)
-- 💬 Questions? → [Discord Server](https://discord.gg/FV83Fcu3V3)
-- ☕ Support the project? → [Ko-fi](https://ko-fi.com/ronincannons)
+Having issues or feature requests? Join our community:
+
+<p align="center">
+  <a href="https://discord.gg/FV83Fcu3V3">
+    <img src="https://img.shields.io/badge/Join-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
+  </a>
+  <a href="https://ko-fi.com/ronincannons">
+    <img src="https://img.shields.io/badge/Support_on-Ko--fi-FF5E5B?style=for-the-badge&logo=kofi&logoColor=white" alt="Ko-fi" />
+  </a>
+</p>
+
+---
 
 ## 📄 License
 
-This project is licensed under the ISC License.
-
-Current version: **v1.3.7**
+This project is licensed under the **ISC License**.
 
 ---
 
-*Developed with ❤️ for the Twitch community.*
+<p align="center">
+  <sub>Developed with ❤️ for the Twitch community by <a href="https://github.com/Benjamin-Web">Benjamin-Web</a></sub>
+</p>
