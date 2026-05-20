@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Benjamin-Web/heist_bot/main/renderer/assets/heist-icon.png" alt="Heist Bot Logo" width="120" height="120" style="border-radius: 20px;" />
+  <img src="renderer/assets/heist-icon.png" alt="Heist Bot Logo" width="120" height="120" style="border-radius: 20px;" />
 </p>
 
 <h1 align="center">Heist Bot</h1>
@@ -10,15 +10,17 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Benjamin-Web/Heist_Bot_Updates/releases/latest"><img src="https://img.shields.io/github/v/release/Benjamin-Web/Heist_Bot_Updates?style=for-the-badge&color=9146ff&label=Download" alt="Latest Release" /></a>
+  <a href="https://github.com/Benjamin-Web/Heist_Bot_Updates/releases"><img src="https://img.shields.io/github/v/release/Benjamin-Web/Heist_Bot_Updates?style=for-the-badge&color=9146ff&label=Download" alt="Latest Release" /></a>
   <img src="https://img.shields.io/badge/platform-Windows-0078D6?style=for-the-badge&logo=windows" alt="Platform" />
+  <img src="https://img.shields.io/badge/electron-33.x-47848F?style=for-the-badge&logo=electron" alt="Electron" />
   <img src="https://img.shields.io/badge/license-ISC-green?style=for-the-badge" alt="License" />
 </p>
 
 <p align="center">
-  <a href="https://www.heist-bot.pro">🌐 Website</a> •
-  <a href="https://discord.gg/FV83Fcu3V3">💬 Discord</a> •
-  <a href="https://ko-fi.com/ronincannons">☕ Ko-fi / PRO</a>
+  <a href="https://www.heist-bot.pro">Website</a> •
+  <a href="https://discord.gg/FV83Fcu3V3">Discord</a> •
+  <a href="https://ko-fi.com/ronincannons">Ko-fi / PRO</a> •
+  <a href="#deutsch">Deutsch</a>
 </p>
 
 ---
@@ -31,33 +33,22 @@ Heist Bot is a **professional desktop application** for Twitch streamers that re
 
 ---
 
-## ⚡ Download & Install
-
-1. **Download** the latest **[HeistBot-Setup-1.5.1.exe](https://github.com/Benjamin-Web/Heist_Bot_Updates/releases/latest)** from the Releases page
-2. **Run** the installer and follow the setup wizard
-3. **Launch** Heist Bot and click **"Login with Twitch"**
-4. You're live! 🎉
-
-> The app checks for updates automatically on every launch. You'll be notified when a new version is available.
-
----
-
 ## ✨ Core Features
 
 ### 🎮 Interactive Heist Game
 Viewers pool their currency and rob banks together. Win big or lose it all — with full animated OBS overlay, sound effects, and a dynamic robber parade.
 
 ### 🔐 One-Click Twitch Login
-No more copy-pasting OAuth tokens. Click **"Login with Twitch"**, authorize, done. Channel, token, and Helix API are auto-configured.
+No more copy-pasting OAuth tokens. Click **"Login with Twitch"** and you're connected. Channel, token, and Helix API are auto-configured.
 
 ### 🛡️ Chat Moderation (Spam Filter)
-Built-in protection against caps spam, emoji floods, repeated messages, and links from non-subscribers. Fully configurable thresholds and timeouts.
+Built-in protection against caps spam, emoji floods, repeated messages, and links from non-subscribers. Fully configurable.
 
 ### ⌨️ Custom Chat Commands
 Create unlimited custom commands (`!discord`, `!socials`, `!ad`, etc.) with support for text responses, URLs, and sound alerts.
 
 ### ⏱️ Timer Commands
-Automated recurring chat messages at custom intervals. Perfect for promoting Discord, social media, or game commands — no external tool needed.
+Automated recurring chat messages at custom intervals. Perfect for promoting Discord, social media, or game commands.
 
 ### 🎫 Raffle System
 Run fair giveaways with ticket pricing, sub-only mode, minimum subscription requirements, and automatic redraw on unclaimed wins.
@@ -68,31 +59,111 @@ Track heist win rates, participation trends, raffle history, and top winners wit
 ### 🧟 Zombie Dog Mode
 An alternative game mode where zombie dogs attack a sausage factory. Different mechanics, custom Spine animations, and a unique theme.
 
+### 🔔 Stream Alerts
+Animated OBS overlay for Follow, Sub, Resub, Gift-Sub, Cheer and Raid events — with configurable duration, volume, animations and custom sounds.
+
+### 🎰 Channel-Points Manager
+Create, edit and delete Twitch channel point rewards straight from the dashboard, and link any reward to a custom command.
+
+### 📣 Raid Shoutout & Auto-Clip
+Auto-shoutout incoming raiders and automatically clip your hype moments when chat activity spikes.
+
+### 🔢 Counters & Activity Log
+Streamer counters (`!deaths`, `!wins`), a searchable activity log with CSV/JSON export, and a persistent stream to-do list.
+
 ### 🌍 5 Languages
 Full localization for **German**, **English**, **Spanish**, **Russian**, and **Chinese** — switchable with one click.
 
-### 💰 Loyalty System
-Automatic currency rewards for watch time and subscriptions (Tier 1, 2 & 3). Viewers earn, bet, and compete.
+---
 
-### 🚀 Auto-Updates
-The bot automatically checks for updates at startup and guides you through one-click installs.
+## 📸 Screenshots
+
+<p align="center">
+  <em>Dashboard • Settings • OBS Overlay</em>
+</p>
+
+| Dashboard | OBS Overlay |
+|:---------:|:-----------:|
+| Modern dark UI with real-time heist status, leaderboard, and event log | Animated robber parade with sound effects and bank scene |
 
 ---
 
-## 🛠️ Setup Guide
+## 🏗️ Architecture
 
-### OBS Overlay
+```
+┌─────────────────────────────────────────────────────┐
+│                   Electron Main Process             │
+│  ┌──────────┐  ┌──────────┐  ┌───────────────────┐  │
+│  │  main.js  │  │  bot.js   │  │  gameLogic.js     │  │
+│  │  (IPC)    │  │  (tmi.js) │  │  (Heist Engine)   │  │
+│  └────┬─────┘  └────┬─────┘  └───────────────────┘  │
+│       │              │                                │
+│  ┌────┴──────────────┴────┐  ┌───────────────────┐  │
+│  │  Twitch Helix API      │  │  timerService.js   │  │
+│  │  (helixApi.js)         │  │  (Auto Messages)   │  │
+│  └────────────────────────┘  └───────────────────┘  │
+│       │                                              │
+│  ┌────┴────────────────────────────────────────────┐ │
+│  │  WebSocket Server (wsServer.js) — Port 8765     │ │
+│  └─────────────────────┬───────────────────────────┘ │
+└────────────────────────│─────────────────────────────┘
+                         │
+        ┌────────────────┼────────────────┐
+        ▼                ▼                ▼
+  ┌──────────┐    ┌──────────┐    ┌──────────────┐
+  │ Dashboard │    │   OBS    │    │   Backend    │
+  │ Renderer  │    │ Overlay  │    │  (Railway)   │
+  │ (HTML/JS) │    │ (Phaser) │    │  Express.js  │
+  └──────────┘    └──────────┘    └──────┬───────┘
+                                         │
+                                   ┌─────┴─────┐
+                                   │  Supabase  │
+                                   │ PostgreSQL │
+                                   └───────────┘
+```
+
+---
+
+## ⚡ Quick Start
+
+### Installation (Recommended)
+
+1. **Download** the latest `HeistBot-Setup-x.x.x.exe` from the [Releases Page](https://github.com/Benjamin-Web/Heist_Bot_Updates/releases)
+2. **Run** the installer and follow the setup wizard
+3. **Launch** Heist Bot and click **"Login with Twitch"**
+4. You're live! 🎉
+
+### Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/Benjamin-Web/heist_bot.git
+cd heist_bot
+
+# Install dependencies
+npm install
+
+# Start in development mode
+npm start
+
+# Build for production
+npm run build
+```
+
+---
+
+## 🛠️ Configuration
+
+### OBS Overlay Setup
 1. Add a **Browser Source** in OBS
-2. Set the URL to `http://localhost:8765/?lang=en` (or `?lang=de` for German)
+2. Set the URL to `http://localhost:8765/?lang=en`
 3. Resolution: **1920 × 1080**
 4. ✅ Enable "Control audio via OBS"
 
-### Spam Filter
-Configure directly in the **Settings** tab of the dashboard:
-
+### Spam Filter Settings
 | Setting | Default | Description |
 |---------|---------|-------------|
-| Max Caps | 70% | Uppercase threshold before timeout |
+| Max Caps | 70% | Percentage of uppercase letters before timeout |
 | Max Emojis | 8 | Maximum emojis per message |
 | Repeat Threshold | 3 | Identical messages within time window |
 | Link Block | On | Block links from non-subscribers |
@@ -101,14 +172,28 @@ Configure directly in the **Settings** tab of the dashboard:
 
 ## 🎮 Chat Commands
 
+### Viewer Commands
 | Command | Aliases | Description |
 |---------|---------|-------------|
 | `!raub <bet>` | `!heist <bet>` | Start or join a bank heist |
 | `!coins` | `!<currency>` | Check your balance |
-| `!topliste` | `!leaderboard` | Show top 5 in chat |
-| `!give @user <amount>` | — | Transfer currency to another viewer |
-| `!top` | — | (Mod) Show top 10 leaderboard |
-| `!heistbot` | `!raubbot` | Show bot version info |
+| `!toplist` | `!leaderboard` | Show top 5 in chat |
+| `!give @user <amount>` | `!schenken` | Transfer currency to another viewer |
+| `!raffle <tickets>` | `!ticket` | Buy tickets for the active raffle |
+| `!uptime` | — | Show how long the stream has been live |
+| `!so <user>` | `!shoutout` | Give another channel a shoutout |
+| `!followage <user>` | — | Show how long someone has followed |
+| `!heistbot` | `!botinfo` | Show bot version info |
+| `!<counter>` | — | Read a streamer counter (e.g. `!deaths`) |
+
+### Moderator Commands
+| Command | Description |
+|---------|-------------|
+| `!top` | Show top 10 leaderboard |
+| `!<counter>+` / `!<counter>-` / `!<counter>=N` | Increment / decrement / set a counter |
+| Custom commands | Configured via PRO dashboard |
+
+> 💡 A full, grouped overview of every built-in command is available in the dashboard's **Bot Commands** card.
 
 ---
 
@@ -118,12 +203,17 @@ Unlock the full potential of Heist Bot with PRO.
 
 | Feature | Free | PRO |
 |---------|:----:|:---:|
-| Heist Game & OBS Overlay | ✅ | ✅ |
-| Loyalty System | ✅ | ✅ |
+| Heist Game | ✅ | ✅ |
+| OBS Overlay | ✅ | ✅ |
+| Stream Alerts (Follow/Sub/Cheer/Raid) | ✅ | ✅ |
+| Raid Shoutout & Auto-Clip | ✅ | ✅ |
+| Counters & Activity Log | ✅ | ✅ |
 | Spam Filter | ✅ | ✅ |
 | Timer Commands | ✅ | ✅ |
-| One-Click Twitch Login | ✅ | ✅ |
+| Twitch One-Click Login | ✅ | ✅ |
 | Custom Commands | — | ✅ |
+| Channel-Points Manager | — | ✅ |
+| Custom Alert Sounds | — | ✅ |
 | Excluded Accounts | — | ✅ |
 | Advanced Statistics | — | ✅ |
 | Zombie Dog Mode | — | ✅ |
@@ -139,46 +229,18 @@ Unlock the full potential of Heist Bot with PRO.
 
 ---
 
-## 📝 Changelog
+## 💻 Tech Stack
 
-### [1.5.1] — 2026-05-15  ·  _"The Independence Update"_
-
-This release transforms Heist Bot from a heist-only game bot into a **complete stream management platform**. Streamers no longer need StreamElements or Nightbot for basic moderation, custom commands, and timed messages — Heist Bot now handles all of this natively.
-
-#### ✨ New Features
-- **One-Click Twitch Login** — StreamElements-style managed OAuth. Click "Login with Twitch", authorize, done. Channel name, token, and Helix API are auto-configured. No more manual OAuth token generation.
-- **Spam Filter** — Built-in chat moderation engine with configurable protection against caps spam, emoji floods, repeated messages, and links from non-subscribers. Timeouts are applied automatically.
-- **Custom Chat Commands** — Create unlimited custom commands (`!discord`, `!ad`, `!socials`, etc.) with support for text, URL, and sound response types. Managed through the PRO dashboard.
-- **Timer / Auto-Messages** — Automated recurring chat messages at configurable intervals (1–1440 minutes). Perfect for promoting Discord, social media, or game commands on autopilot.
-- **Twitch Helix API for All Users** — The Helix API integration (EventSub, broadcaster info, shoutouts) is now available for all users, no longer PRO-exclusive.
-- **Twitch SSO Token Exchange** — New backend endpoint for secure Twitch-to-JWT token exchange, enabling single-source-of-truth authentication across the app and backend.
-
-#### 🔧 Improvements
-- **Persistent Login State** — The header now correctly displays your Twitch username after app restart, without requiring re-authentication.
-- **Cleaner Settings UI** — Manual channel/token input fields are now hidden under a collapsible "Advanced" section. Most users will never need them thanks to One-Click Login.
-- **Exception Hardening** — Comprehensive try/catch wrappers across all new modules (bot, main process, renderer, timer service) to prevent unhandled crashes.
-- **OAuth Redirect-URI Fixes** — Resolved Twitch redirect mismatch errors for the managed login flow.
-- **Synchronized Auth State** — Login state in the header, settings card, and auth modal are now kept in sync from every possible entry point (OAuth, manual connect, app restart).
-
-#### 🐛 Bug Fixes
-- **Header Username Missing on Restart** — Fixed a `data-i18n` attribute conflict where the i18n system would overwrite the logged-in username with the generic "Login" label after the auth UI had already set it.
-- **Shoutout Without Helix** — The shoutout command no longer crashes when the Helix API is unavailable.
-
----
-
-### [1.4.5] — 2026-05-07
-#### 🐛 Fixed
-- **Zombie Dog Game Mode:** Fixed Spine animations getting stuck in the Joining phase on certain skins.
-- **OBS Overlay Cleanup:** Fixed orphaned Spine animations on robbery resolution.
-
-### [1.4.0] — 2026-05-02
-#### ✨ Added
-- Live configuration updates without restart.
-- Self-healing PRO activation for missing database records.
-
-#### 🐛 Fixed
-- Case-insensitive user lookup for PRO activation.
-- Email normalization during registration and login.
+| Layer | Technology |
+|-------|-----------|
+| **Desktop App** | Electron 33 |
+| **Twitch Chat** | tmi.js |
+| **Twitch API** | Helix REST API + EventSub WebSocket |
+| **Overlay Engine** | Phaser 3 + Spine Animations + GSAP |
+| **Database** | Supabase (PostgreSQL) |
+| **Backend** | Express.js on Railway |
+| **Auth** | Twitch OAuth 2.0 Implicit + JWT Token Exchange |
+| **Auto-Update** | electron-updater (GitHub Releases) |
 
 ---
 
@@ -198,34 +260,256 @@ This release transforms Heist Bot from a heist-only game bot into a **complete s
 | ✅ | **Spam Filter (Caps, Emojis, Links, Repeats)** |
 | ✅ | **Custom Chat Commands** |
 | ✅ | **Timer / Auto-Messages** |
-| 🔜 | Enhanced Heist Effects & Animations |
-| 🔜 | Additional Game Modes |
-| 🔜 | Deep EventSub Channel Points Integration |
+| ✅ | **Stream Alerts (Follow/Sub/Cheer/Raid) + Animated Overlay** |
+| ✅ | **Channel-Points Manager (create / edit / link to commands)** |
+| ✅ | **Raid Shoutout Queue & Auto-Clip** |
+| ✅ | **Counter System & Activity Log Export** |
+| ✅ | **Giveaway Templates & Streaming To-Do List** |
+| 🔜 | Moderator Web Dashboard (team permissions) |
+| 🔜 | Tipping / Donations with Stripe |
+| 🔜 | Loyalty System (points, levels, shop) |
 | 🔜 | Context-Aware AI Chat Responses |
 
 ---
 
-## 🤝 Support & Community
+## 📝 Changelog
 
-Having issues or feature requests? Join our community:
+### [1.6.0] — 2026-05-20  ·  _"The Engagement Update"_
+
+#### ✨ New Features
+- **Stream Alerts** — Animated OBS overlay for Follow, Sub, Resub, Gift-Sub, Cheer and Raid events. Subscribed via Twitch EventSub, served as a browser source at `http://localhost:8765/alerts/`.
+- **Alert Configuration** — Set alert duration, volume, per-type animation style and custom sounds (PRO) directly from the dashboard.
+- **Channel-Points Manager** — Create, edit, enable/disable and delete Twitch channel point rewards from the dashboard. Link any reward to a custom command so a redemption triggers it automatically.
+- **Raid Shoutout Queue** — Automatically posts a shoutout when a raid comes in, with a customizable template and a queue for back-to-back raids.
+- **Auto-Clip** — Automatically creates a Twitch clip when chat activity spikes, capturing your hype moments.
+- **Counter System** — Streamer counters like `!deaths`, `!wins`, `!throws`. Anyone reads with `!name`, mods adjust with `!name+`, `!name-` or `!name=5`.
+- **Activity Log & Export** — Searchable history of all heists, raffles and polls, exportable as CSV or JSON.
+- **Streaming To-Do List** — A persistent task list on the dashboard for your stream prep.
+- **Giveaway Templates** — Save raffle configurations as reusable templates and load them with one click.
+- **Reset All Players** — One-click reset of all player data (coins + stats) with double confirmation.
+
+#### 🔧 Improvements
+- **Bot Commands Overview** — New dashboard card listing every built-in chat command, grouped and described.
+- **DamageRace Integration** — Moved into its own clearly laid-out card with a proper toggle and slug help text.
+- **Team Permissions Backend** — Backend foundation for inviting moderators with granular permissions (full moderator web dashboard coming next).
+
+---
+
+### [1.5.1] — 2026-05-15  ·  _"The Independence Update"_
+
+#### ✨ New Features
+- **One-Click Twitch Login** — StreamElements-style managed OAuth. Click "Login with Twitch", authorize, done. Channel name, token, and Helix API are auto-configured.
+- **Spam Filter** — Built-in chat moderation: caps limiter, emoji flood protection, repeat message detection, and link blocking for non-subscribers.
+- **Custom Chat Commands** — Create unlimited chat commands (`!discord`, `!ad`, `!socials`, etc.) with text, URL, and sound response types.
+- **Timer / Auto-Messages** — Automated recurring chat messages at configurable intervals. Promote your Discord, game commands, or sponsor messages on autopilot.
+- **Twitch Helix API for All Users** — Helix integration (EventSub, broadcaster info, shoutouts) is now available for all users, no longer PRO-exclusive.
+- **Twitch SSO Token Exchange** — New backend endpoint for secure Twitch-to-JWT token exchange, enabling single-source-of-truth authentication.
+
+#### 🔧 Improvements
+- **Persistent Login State** — Header displays your Twitch username after app restart without re-authentication.
+- **Advanced Settings Collapsed** — Manual channel/token fields are now hidden under an "Advanced" details section for a cleaner UI.
+- **Exception Hardening** — Comprehensive try/catch wrappers across all new modules (bot, main, renderer, timerService) to prevent unhandled crashes.
+- **OAuth Redirect-URI Fixes** — Resolved Twitch redirect mismatch errors for the managed login flow.
+- **Header Sync** — Login state in header, settings card, and auth modal are now kept in sync from every entry point.
+
+#### 🐛 Bug Fixes
+- **Header Username Missing on Restart** — Fixed `data-i18n` attribute conflict that caused `updateLanguageUI()` to overwrite the username with "Anmelden" after `updateAuthUI()` had set it.
+- **Shoutout Without Helix** — Shoutout command no longer crashes when Helix API is unavailable.
+
+---
+
+### [1.4.5] — 2026-05-07
+#### 🐛 Fixed
+- **Zombie Dog Game Mode:** Fixed a critical bug in the OBS overlay where dog Spine animations would get stuck in the Joining phase due to missing `'Hit'` animation keys on certain skins.
+- **OBS Overlay Cleanup:** Corrected duplicate `destroy()` methods on robber/dog containers to prevent orphaned Spine animations.
+
+### [1.4.0] — 2026-05-02
+#### ✨ Added
+- **Live Configuration Updates:** Settings changes take effect immediately without a restart.
+- **Self-Healing Activation:** Improved PRO activation to auto-fix missing database records.
+
+#### 🐛 Fixed
+- Case-insensitive user lookup for PRO activation.
+- Email normalization during registration and login.
+- Configuration inputs no longer locked during active connection.
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Benjamin-Web/heist_bot/issues).
+
+## 📄 License
+
+This project is licensed under the **ISC License** — see the [LICENSE](LICENSE) file for details.
+
+## 💖 Support
+
+If you enjoy Heist Bot, consider supporting the development:
 
 <p align="center">
-  <a href="https://discord.gg/FV83Fcu3V3">
-    <img src="https://img.shields.io/badge/Join-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
-  </a>
   <a href="https://ko-fi.com/ronincannons">
     <img src="https://img.shields.io/badge/Support_on-Ko--fi-FF5E5B?style=for-the-badge&logo=kofi&logoColor=white" alt="Ko-fi" />
+  </a>
+  <a href="https://discord.gg/FV83Fcu3V3">
+    <img src="https://img.shields.io/badge/Join-Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
   </a>
 </p>
 
 ---
 
-## 📄 License
+<p align="center">
+  <sub>Developed with ❤️ for the Twitch community by <a href="https://github.com/Benjamin-Web">Benjamin-Web</a></sub>
+</p>
 
-This project is licensed under the **ISC License**.
+---
+
+<a name="deutsch"></a>
+
+<h1 align="center">🇩🇪 Heist Bot — Deutsch</h1>
+
+<p align="center">
+  <strong>Die All-in-One Twitch Stream Management Plattform</strong><br/>
+  <sub>Interaktive Spiele · Chat-Moderation · Custom Commands · Timer · Ein-Klick Twitch Login</sub>
+</p>
+
+---
+
+## 🚀 Was ist Heist Bot?
+
+Heist Bot ist eine **professionelle Desktop-Anwendung** für Twitch-Streamer, die mehrere Tools in einem Paket ersetzt. Führe interaktive Heist-Spiele durch, moderiere deinen Chat, richte Custom Commands ein, automatisiere Timer-Nachrichten — alles aus einem einzigen, modernen Dashboard.
+
+> **Kein Jonglieren mehr mit StreamElements, Nightbot und separaten Bots.** Heist Bot erledigt alles.
+
+---
+
+## ✨ Kernfunktionen
+
+| Feature | Beschreibung |
+|---------|-------------|
+| 🎮 **Heist-Minispiel** | Zuschauer überfallen gemeinsam Banken — mit animiertem OBS-Overlay, Soundeffekten und dynamischer Räuber-Parade |
+| 🔐 **Ein-Klick Twitch Login** | Kein OAuth-Token mehr kopieren. "Mit Twitch anmelden" klicken — fertig |
+| 🛡️ **Spam-Filter** | Schutz gegen Caps-Spam, Emoji-Flut, Nachrichtenwiederholungen und Links von Nicht-Abonnenten |
+| ⌨️ **Custom Commands** | Eigene Chat-Befehle erstellen (`!discord`, `!ad`, `!socials`, etc.) |
+| ⏱️ **Timer-Commands** | Automatische wiederkehrende Chat-Nachrichten in konfigurierbaren Intervallen |
+| 🎫 **Raffle-System** | Faire Gewinnspiele mit Ticket-Preisen, Sub-Only-Modus und automatischer Neuvergabe |
+| 📊 **Statistik-Dashboard** | Win-Rates, Teilnahme-Trends, Raffle-Historie und Top-Gewinner |
+| 🧟 **Zombie-Hunde Modus** | Alternativer Spielmodus mit eigener Mechanik, Spine-Animationen und Zombie-Thema |
+| 🔔 **Stream-Alerts** | Animiertes OBS-Overlay für Follow/Sub/Cheer/Raid — mit Dauer, Lautstärke, Animationen & Custom-Sounds |
+| 🎰 **Channel-Points-Manager** | Twitch-Kanalpunkte-Belohnungen im Dashboard anlegen, bearbeiten und mit Commands verknüpfen |
+| 📣 **Raid-Shoutout & Auto-Clip** | Automatische Shoutouts bei Raids und automatische Clips bei Chat-Hype |
+| 🔢 **Counter & Aktivitäts-Log** | Zähler (`!deaths`, `!wins`), durchsuchbares Log mit CSV/JSON-Export, Streaming-To-Do-Liste |
+| 🌍 **5 Sprachen** | DE, EN, ES, RU, ZH — mit einem Klick wechselbar |
+
+---
+
+## ⚡ Schnellstart
+
+1. **Herunterladen** — Neueste `HeistBot-Setup-x.x.x.exe` von der [Releases-Seite](https://github.com/Benjamin-Web/Heist_Bot_Updates/releases)
+2. **Installieren** — Installer ausführen und dem Setup folgen
+3. **Starten** — Heist Bot öffnen und **"Mit Twitch anmelden"** klicken
+4. Fertig! 🎉
+
+---
+
+## 🎮 Chat-Befehle
+
+| Befehl | Aliase | Beschreibung |
+|--------|--------|-------------|
+| `!raub <einsatz>` | `!heist <einsatz>` | Banküberfall starten oder beitreten |
+| `!coins` | `!<währung>` | Kontostand anzeigen |
+| `!topliste` | `!leaderboard` | Top 5 Räuber im Chat |
+| `!give @user <betrag>` | `!schenken` | Währung an anderen Zuschauer senden |
+| `!raffle <tickets>` | `!ticket` | Lose für die aktive Verlosung kaufen |
+| `!uptime` | — | Zeigt die Stream-Laufzeit |
+| `!so <user>` | `!shoutout` | Shoutout für einen anderen Kanal |
+| `!followage <user>` | — | Zeigt, wie lange jemand folgt |
+| `!top` | — | (Mod) Top 10 Bestenliste |
+| `!<counter>` | — | Streamer-Zähler lesen (z.B. `!deaths`) |
+
+> 💡 Eine vollständige, gruppierte Übersicht aller eingebauten Commands findest du im Dashboard in der Karte **Bot-Commands**.
+
+---
+
+## ⭐ PRO Mitgliedschaft
+
+| Feature | Free | PRO |
+|---------|:----:|:---:|
+| Heist-Spiel & Overlay | ✅ | ✅ |
+| Stream-Alerts (Follow/Sub/Cheer/Raid) | ✅ | ✅ |
+| Raid-Shoutout & Auto-Clip | ✅ | ✅ |
+| Counter & Aktivitäts-Log | ✅ | ✅ |
+| Spam-Filter | ✅ | ✅ |
+| Timer-Commands | ✅ | ✅ |
+| Custom Commands | — | ✅ |
+| Channel-Points-Manager | — | ✅ |
+| Custom Alert-Sounds | — | ✅ |
+| Erweiterte Statistiken | — | ✅ |
+| Zombie-Hunde Modus | — | ✅ |
+| Umfragen / Polls | — | ✅ |
+| Prioritäts-Support | — | ✅ |
+
+### PRO aktivieren
+1. **[ko-fi.com/ronincannons](https://ko-fi.com/ronincannons)** besuchen
+2. **"Heist Bot PRO"** Mitgliedschaft kaufen
+3. Im Order-Note-Feld eingeben: `Twitch: DeinUsername`
+4. PRO wird automatisch aktiviert ✅
+
+---
+
+## 🛠️ OBS Overlay
+
+1. **Browser-Quelle** in OBS hinzufügen
+2. URL: `http://localhost:8765/?lang=de`
+3. Auflösung: **1920 × 1080**
+4. ✅ "Audio über OBS steuern" aktivieren
+
+---
+
+## 📝 Changelog
+
+### [1.6.0] — 20.05.2026  ·  _"Das Engagement-Update"_
+
+#### ✨ Neue Features
+- **Stream-Alerts** — Animiertes OBS-Overlay für Follow, Sub, Resub, Gift-Sub, Cheer und Raid. Über Twitch EventSub abonniert, als Browser-Quelle unter `http://localhost:8765/alerts/`.
+- **Alert-Konfiguration** — Dauer, Lautstärke, Animationsstil pro Typ und Custom-Sounds (PRO) direkt im Dashboard einstellbar.
+- **Channel-Points-Manager** — Twitch-Kanalpunkte-Belohnungen direkt im Dashboard anlegen, bearbeiten, aktivieren/deaktivieren und löschen. Jede Belohnung kann einen Custom-Command auslösen.
+- **Raid-Shoutout-Queue** — Postet bei eingehenden Raids automatisch einen Shoutout mit anpassbarem Text, inkl. Warteschlange für mehrere Raids.
+- **Auto-Clip** — Erstellt automatisch einen Twitch-Clip wenn der Chat sehr aktiv wird — Hype-Momente festgehalten.
+- **Counter-System** — Streamer-Zähler wie `!deaths`, `!wins`, `!throws`. Alle lesen mit `!name`, Mods ändern mit `!name+`, `!name-` oder `!name=5`.
+- **Aktivitäts-Log & Export** — Durchsuchbare Historie aller Heists, Raffles und Polls — exportierbar als CSV oder JSON.
+- **Streaming-Aufgabenliste** — Persistente To-Do-Liste im Dashboard für deine Stream-Vorbereitung.
+- **Giveaway-Vorlagen** — Raffle-Konfigurationen als wiederverwendbare Vorlagen speichern und mit einem Klick laden.
+- **Alle Spieler zurücksetzen** — Ein-Klick-Reset aller Spielerdaten (Münzen + Statistiken) mit doppelter Bestätigung.
+
+#### 🔧 Verbesserungen
+- **Bot-Commands-Übersicht** — Neue Dashboard-Karte mit allen eingebauten Chat-Commands, gruppiert und erklärt.
+- **DamageRace-Integration** — In eine eigene, übersichtliche Karte verschoben mit sauberem Schalter und Slug-Hilfetext.
+- **Team-Permissions Backend** — Backend-Grundlage zum Einladen von Moderatoren mit granularen Rechten (das vollständige Mod-Web-Dashboard folgt als Nächstes).
+
+---
+
+### [1.5.0] — 15.05.2026  ·  _"Das Unabhängigkeits-Update"_
+
+#### ✨ Neue Features
+- **Ein-Klick Twitch Login** — Managed OAuth im StreamElements-Stil. Klick auf "Mit Twitch anmelden", autorisieren, fertig. Kanal, Token und Helix-API werden automatisch konfiguriert.
+- **Spam-Filter** — Eingebaute Chat-Moderation: Caps-Limiter, Emoji-Flut-Schutz, Wiederholungserkennung und Link-Blockierung für Nicht-Abonnenten.
+- **Custom Chat Commands** — Unbegrenzte Chat-Befehle erstellen (`!discord`, `!ad`, `!socials`, etc.) mit Text-, URL- und Sound-Antworten.
+- **Timer / Auto-Nachrichten** — Automatische wiederkehrende Chat-Nachrichten in konfigurierbaren Intervallen.
+- **Helix API für alle User** — Helix-Integration ist jetzt für alle Nutzer verfügbar, nicht mehr PRO-exklusiv.
+- **Twitch SSO Token-Exchange** — Neuer Backend-Endpunkt für sicheren Twitch-zu-JWT Token-Austausch.
+
+#### 🔧 Verbesserungen
+- **Persistenter Login-Status** — Header zeigt den Twitch-Username auch nach App-Neustart.
+- **Erweiterte Einstellungen eingeklappt** — Manuelle Channel/Token-Felder sind unter "Erweitert" versteckt.
+- **Exception-Härtung** — Umfassende Absicherung über alle neuen Module.
+
+#### 🐛 Fehlerbehebungen
+- **Header-Username fehlt nach Neustart** — `data-i18n` Konflikt behoben.
+- **Shoutout ohne Helix** — Kein Crash mehr wenn Helix-API nicht verfügbar.
 
 ---
 
 <p align="center">
-  <sub>Developed with ❤️ for the Twitch community by <a href="https://github.com/Benjamin-Web">Benjamin-Web</a></sub>
+  <sub>Entwickelt mit ❤️ für die Twitch-Community von <a href="https://github.com/Benjamin-Web">Benjamin-Web</a></sub>
 </p>
