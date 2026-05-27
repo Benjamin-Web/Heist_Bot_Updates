@@ -145,24 +145,6 @@ Full localization for **German**, **English**, **Spanish**, **Russian**, and **C
 3. **Launch** Heist Bot and click **"Login with Twitch"**
 4. You're live! 🎉
 
-### Development Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/Benjamin-Web/heist_bot.git
-cd heist_bot
-
-# Install dependencies
-npm install
-
-# Start in development mode
-npm start
-
-# Build for production
-npm run build
-```
-
----
 
 ## 🛠️ Configuration
 
