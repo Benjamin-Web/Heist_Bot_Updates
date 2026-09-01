@@ -19,7 +19,7 @@
 <p align="center">
   <a href="https://www.heist-bot.pro">Website</a> •
   <a href="https://discord.gg/FV83Fcu3V3">Discord</a> •
-  <a href="https://ko-fi.com/ronincannons">Ko-fi / PRO</a> •
+  <a href="https://ko-fi.com/ronincannons">Ko-fi</a> •
   <a href="#deutsch">Deutsch</a>
 </p>
 
@@ -60,19 +60,25 @@ Track heist win rates, participation trends, raffle history, and top winners wit
 An alternative game mode where zombie dogs attack a sausage factory. Different mechanics, custom Spine animations, and a unique theme.
 
 ### 🔔 Stream Alerts
-Animated OBS overlay for Follow, Sub, Resub, Gift-Sub, Cheer and Raid events — with configurable duration, volume, animations and custom sounds.
+Animated OBS overlay for Follow, Sub, Resub, Gift-Sub, Cheer and Raid events — with configurable duration, volume, animations and custom sounds. Your **actual game character** performs in the card: the robber tosses something over on a gift sub and comes running in on a raid. Playing Zombie Dog mode? You get the dog everywhere instead — it follows your game mode automatically, nothing to configure.
+
+### 🆕 Custom Alerts — Build Your Own
+Beyond the six built-in events, design **your own alerts**: name, text, icon, accent color, animation, duration, sound and image/video media. Trigger them by a **chat command** or a **Channel-Points reward** — each with a configurable per-alert cooldown — or fire them manually. Manage them in the desktop app **and** the mod web dashboard; media is uploaded to the cloud.
+
+### 🏆 Loyalty, XP & Levels
+Reward your community for watching and chatting: viewers earn currency and XP over time, claim a `!daily` bonus, level up, and check their progress with `!rank`. Sub/VIP multipliers, a daily bonus and per-value caps are all configurable, and a **Top Viewer** view highlights your most active members.
 
 ### 🎰 Channel-Points Manager
 Create, edit and delete Twitch channel point rewards straight from the dashboard, and link any reward to a custom command.
 
-### 📣 Raid Shoutout & Auto-Clip _(PRO)_
+### 📣 Raid Shoutout & Auto-Clip
 Auto-shoutout incoming raiders and automatically clip your hype moments when chat activity spikes.
 
 ### 🔢 Counters & Activity Log
-Streamer counters (`!deaths`, `!wins`), a searchable activity log _(CSV/JSON export is PRO)_, and a persistent stream to-do list. Up to **3 counters free**, unlimited with PRO.
+Streamer counters (`!deaths`, `!wins`), a searchable activity log with CSV/JSON export, and a persistent stream to-do list. Unlimited counters.
 
 ### 🌐 Mod Web Dashboard _(NEW in 1.7.0)_
-Invite moderators who configure the bot from their browser at **[mod.heist-bot.pro](https://mod.heist-bot.pro)** — no desktop install required for the team. Per-module permissions, audit log, all 5 languages. Free for **1 mod**, unlimited with PRO.
+Invite moderators who configure the bot from their browser at **[mod.heist-bot.pro](https://mod.heist-bot.pro)** — no desktop install required for the team. Per-module permissions, audit log, all 5 languages. Unlimited mods.
 
 ### 👥 Team Management _(NEW in 1.7.0)_
 A dedicated "Team" tab where you invite mods by Twitch login (Helix lookup is automatic), assign per-module permissions (7 permissions to choose from), and edit or remove them anytime. Every mod action is recorded in the audit log.
@@ -138,7 +144,9 @@ Full localization for **German**, **English**, **Spanish**, **Russian**, and **C
 
 ## ⚡ Quick Start
 
-### Installation (Recommended)
+### Installation
+
+> Heist Bot is distributed **only as a downloadable installer** from the Releases page — there is no separate store or package. After the first install, the app keeps itself up to date automatically.
 
 1. **Download** the latest `HeistBot-Setup-x.x.x.exe` from the [Releases Page](https://github.com/Benjamin-Web/Heist_Bot_Updates/releases)
 2. **Run** the installer and follow the setup wizard
@@ -185,51 +193,17 @@ Full localization for **German**, **English**, **Spanish**, **Russian**, and **C
 |---------|-------------|
 | `!top` | Show top 10 leaderboard |
 | `!<counter>+` / `!<counter>-` / `!<counter>=N` | Increment / decrement / set a counter |
-| Custom commands | Configured via PRO dashboard |
+| Custom commands | Configured in the dashboard |
 
 > 💡 A full, grouped overview of every built-in command is available in the dashboard's **Bot Commands** card.
 
 ---
 
-## ⭐ PRO Membership
+## 💚 Free for Everyone
 
-Unlock the full potential of Heist Bot with PRO.
+Heist Bot is 100% free — every feature is included for every streamer, with no subscription and no limits. Custom Commands, Custom Alerts, Loyalty/XP, Zombie Dog Mode, Visual Polls, AI Chat, Raid Shoutout, Auto-Clip, the Channel-Points Manager, Excluded Accounts, advanced statistics, Activity Log export, unlimited counters/timers/mods, and a configurable Heist cooldown — all of it, free, from the start.
 
-| Feature | Free | PRO |
-|---------|:----:|:---:|
-| Heist Game (`!heist` / `!raub`) | ✅ | ✅ |
-| Raffle System | ✅ | ✅ |
-| All OBS Overlays (Heist, Alerts, Counter) | ✅ | ✅ |
-| Stream Alerts (Follow/Sub/Cheer/Raid) | ✅ | ✅ |
-| Spam Filter (caps / emojis / repeat / links) | ✅ | ✅ |
-| Counters | ✅ up to 3 | ✅ unlimited |
-| Timer Commands | ✅ up to 3 | ✅ unlimited |
-| Activity Log (view) | ✅ | ✅ |
-| Twitch One-Click Login | ✅ | ✅ |
-| Mod Web Dashboard | ✅ for 1 mod | ✅ all mods |
-| Team Management (invite mods) | ✅ 1 mod | ✅ unlimited |
-| Audit Log (team activity) | ✅ | ✅ |
-| Heist Game Master Toggle | ✅ | ✅ |
-| Streaming To-Do List | ✅ | ✅ |
-| **Activity Log Export (CSV/JSON)** | — | ✅ |
-| **Raid Shoutout Queue** | — | ✅ |
-| **Auto-Clip (chat-velocity)** | — | ✅ |
-| Custom Commands | — | ✅ |
-| Channel-Points Manager | — | ✅ |
-| Custom Alert Animations + Sounds (per type) | — | ✅ |
-| Excluded Accounts (leaderboard filter) | — | ✅ |
-| Advanced Statistics (trends, charts) | — | ✅ |
-| Zombie Dog Mode | — | ✅ |
-| Visual Polls (Tug-of-War) | — | ✅ |
-| AI Chat (`!ask` / `!ai`) | — | ✅ |
-| Heist Cooldown Config | — | ✅ |
-| Priority Support | — | ✅ |
-
-### How to Activate PRO
-1. Visit **[ko-fi.com/ronincannons](https://ko-fi.com/ronincannons)**
-2. Purchase the **"Heist Bot PRO"** membership
-3. Enter `Twitch: YourUsername` in the Order Note field
-4. PRO activates automatically within minutes ✅
+If you'd like to support development, **[ko-fi.com/ronincannons](https://ko-fi.com/ronincannons)** is there for voluntary donations — no perks or unlocks attached, just a way to say thanks.
 
 ---
 
@@ -256,7 +230,7 @@ Unlock the full potential of Heist Bot with PRO.
 | ✅ | Raffle System (Sub-Only, Redraw, Claim Timer) |
 | ✅ | Statistics Dashboard with Trends & Charts |
 | ✅ | 5 Languages (DE, EN, ZH, ES, RU) |
-| ✅ | PRO Membership System (Ko-fi Integration) |
+| ✅ | Free for Everyone — every feature unlocked, no subscription |
 | ✅ | Zombie Dog Game Mode |
 | ✅ | Visual Polls & Tug-of-War |
 | ✅ | Twitch Helix API Integration |
@@ -274,15 +248,35 @@ Unlock the full potential of Heist Bot with PRO.
 | ✅ | **Heist Master Toggle** _(1.7.0)_ — use the bot purely for chat / spam / timers / alerts without the heist mini-game |
 | ✅ | **Moderator Web Dashboard** _(1.7.0)_ — full feature set: Commands, Timers, Spam, Counters, Alerts at mod.heist-bot.pro |
 | ✅ | **Team Management UI** _(1.7.0)_ — invite mods by Twitch login with per-module permissions |
+| ✅ | **Loyalty, XP & Levels** _(1.8.0)_ — `!daily`, XP for watching/chatting, levels, `!rank`, multipliers, Top Viewer |
+| ✅ | **Custom Alerts** _(1.8.7)_ — build your own alerts, cloud media, chat-command & Channel-Points triggers, per-alert cooldown |
+| ✅ | **Animated characters in alerts** _(1.12.0)_ — your real robber (or zombie dog, by game mode) performs inside the alert card |
 | 🔜 | Hate-Raid & Follow-Bot Protection |
 | 🔜 | Smart-Mod (AI-assisted moderation) |
 | 🔜 | Tipping / Donations with Stripe |
-| 🔜 | Loyalty System (points, levels, shop) |
+| 🔜 | Loyalty Shop & Point Redemptions |
 | 🔜 | Context-Aware AI Chat Responses |
 
 ---
 
 ## 📝 Changelog
+
+### [1.8.7] — 2026-06-30  ·  _"Custom Alerts + Loyalty"_
+
+Consolidates everything since 1.7.0 that now reaches the desktop app.
+
+#### ✨ New Features
+- **Custom Alerts — build your own** — Create your own alerts (name, text, icon, accent color, animation, duration, sound, image/video) and trigger them by a **chat command** or a **Channel-Points reward**, each with a configurable per-alert cooldown — or fire them manually to test. Manage them in the desktop app **and** the mod web dashboard; media uploads to the cloud (Supabase Storage).
+- **Loyalty, XP & Levels** — Viewers earn currency and XP for watching and chatting, claim a `!daily` bonus, level up and check progress with `!rank`. Sub/VIP multipliers, daily bonus and caps are configurable; a **Top Viewer** view shows your most active members.
+- **Disable `!give`** — Optional toggle to turn off currency gifting (`!give` / `!schenken`).
+- **Custom Commands on/off** — Enable or disable individual custom commands without deleting them — in the desktop editor and the mod dashboard.
+
+#### 🔧 Improvements
+- **Reorganized desktop settings** — Grouped into clear sub-tabs (Connection & Output / Game & Economy / Automation).
+- **Mod-Dashboard signpost** — Clearer pointer from the desktop to the mod web dashboard where XP/Loyalty is configured.
+- **Configurable over fixed** — Tunable values (such as the custom-alert cooldown) are exposed as settings instead of hard-coded constants.
+
+---
 
 ### [1.7.0] — 2026-05-27  ·  _"Team Permissions + Web Dashboard"_
 
@@ -299,7 +293,7 @@ required for the team.
 - **Heist Game Master Toggle** — A single checkbox to silence the heist mini-game while keeping all other bot features running.
 - **Cloud-synced configuration** — Spam Filter, Counters and Alerts now sync to Supabase. The desktop loads them on bot start; the web dashboard writes go straight to the cloud.
 
-#### 💰 Pricing Update
+#### 💰 Pricing Update _(historical — since v1.10.0 everything is free)_
 Several features now require **PRO**:
 - More than **3 Counters** per channel
 - More than **1 Mod** per channel (the team feature is FREE for a one-mod team)
@@ -447,11 +441,13 @@ Heist Bot ist eine **professionelle Desktop-Anwendung** für Twitch-Streamer, di
 | 🎫 **Raffle-System** | Faire Gewinnspiele mit Ticket-Preisen, Sub-Only-Modus und automatischer Neuvergabe |
 | 📊 **Statistik-Dashboard** | Win-Rates, Teilnahme-Trends, Raffle-Historie und Top-Gewinner |
 | 🧟 **Zombie-Hunde Modus** | Alternativer Spielmodus mit eigener Mechanik, Spine-Animationen und Zombie-Thema |
-| 🔔 **Stream-Alerts** | Animiertes OBS-Overlay für Follow/Sub/Cheer/Raid — mit Dauer, Lautstärke, Animationen & Custom-Sounds |
+| 🔔 **Stream-Alerts** | Animiertes OBS-Overlay für Follow/Sub/Cheer/Raid — mit Dauer, Lautstärke, Animationen & Custom-Sounds. Deine **echte Spielfigur** tritt in der Karte auf: der Räuber wirft bei Gift-Subs etwas herüber und kommt beim Raid angerannt. Im Zombie-Hunde-Modus übernimmt überall der Hund — automatisch nach Spielmodus, ohne Einstellung |
+| 🆕 **Eigene Alerts** | Erstelle eigene Alerts (Name, Text, Icon, Farbe, Animation, Dauer, Sound, Bild/Video) und löse sie per Chat-Befehl oder Channel-Points aus — mit Cooldown pro Alert. Verwaltung im Desktop **und** im Mod-Dashboard, Media in der Cloud |
+| 🏆 **Loyalty, XP & Level** | Zuschauer sammeln Währung & XP fürs Zuschauen/Chatten, holen den `!daily`-Bonus, steigen Level auf und prüfen ihren Stand mit `!rank`. Multiplikatoren, Tagesbonus & Top-Viewer-Ansicht |
 | 🎰 **Channel-Points-Manager** | Twitch-Kanalpunkte-Belohnungen im Dashboard anlegen, bearbeiten und mit Commands verknüpfen |
-| 📣 **Raid-Shoutout & Auto-Clip** _(PRO)_ | Automatische Shoutouts bei Raids und automatische Clips bei Chat-Hype |
-| 🔢 **Counter & Aktivitäts-Log** | Zähler (`!deaths`, `!wins`), durchsuchbares Log _(CSV/JSON-Export ist PRO)_, Streaming-To-Do-Liste. Bis zu **3 Counter gratis**, unbegrenzt mit PRO |
-| 🌐 **Mod-Web-Dashboard** _(NEU in 1.7.0)_ | Lade Moderatoren ein, die den Bot über ihren Browser auf **[mod.heist-bot.pro](https://mod.heist-bot.pro)** konfigurieren — kein Desktop-Install fürs Team. Gratis für **1 Mod**, unbegrenzt mit PRO |
+| 📣 **Raid-Shoutout & Auto-Clip** | Automatische Shoutouts bei Raids und automatische Clips bei Chat-Hype |
+| 🔢 **Counter & Aktivitäts-Log** | Zähler (`!deaths`, `!wins`), durchsuchbares Log mit CSV/JSON-Export, Streaming-To-Do-Liste. Unbegrenzt viele Counter |
+| 🌐 **Mod-Web-Dashboard** _(NEU in 1.7.0)_ | Lade Moderatoren ein, die den Bot über ihren Browser auf **[mod.heist-bot.pro](https://mod.heist-bot.pro)** konfigurieren — kein Desktop-Install fürs Team. Unbegrenzt viele Mods |
 | 👥 **Team-Verwaltung** _(NEU in 1.7.0)_ | Eigener „Team"-Tab im Desktop: Mods per Twitch-Login einladen (Helix-Lookup automatisch), Permissions pro Modul vergeben, jederzeit bearbeiten oder entfernen. Audit-Log inklusive |
 | 🔁 **Counter-Overlay** _(NEU in 1.7.0)_ | Neue transparente OBS-Browser-Quelle, die deine Counter live anzeigt — mit URL-Parametern für Layout/Theme |
 | ⏸️ **Heist-Master-Toggle** _(NEU in 1.7.0)_ | Eine Checkbox, die das Heist-Spiel deaktiviert — alle anderen Bot-Funktionen (Raffles, Counter, Alerts, Polls) laufen weiter |
@@ -460,6 +456,8 @@ Heist Bot ist eine **professionelle Desktop-Anwendung** für Twitch-Streamer, di
 ---
 
 ## ⚡ Schnellstart
+
+> Heist Bot gibt's **ausschließlich als Installer-Download** von der Releases-Seite — keinen Store, kein separates Paket. Nach der ersten Installation hält sich die App per Auto-Update selbst aktuell.
 
 1. **Herunterladen** — Neueste `HeistBot-Setup-x.x.x.exe` von der [Releases-Seite](https://github.com/Benjamin-Web/Heist_Bot_Updates/releases)
 2. **Installieren** — Installer ausführen und dem Setup folgen
@@ -487,42 +485,11 @@ Heist Bot ist eine **professionelle Desktop-Anwendung** für Twitch-Streamer, di
 
 ---
 
-## ⭐ PRO Mitgliedschaft
+## 💚 Kostenlos für alle
 
-| Feature | Free | PRO |
-|---------|:----:|:---:|
-| Heist-Spiel & alle OBS-Overlays | ✅ | ✅ |
-| Raffle-System | ✅ | ✅ |
-| Stream-Alerts (Follow/Sub/Cheer/Raid) | ✅ | ✅ |
-| Spam-Filter | ✅ | ✅ |
-| Counter | ✅ bis 3 | ✅ unbegrenzt |
-| Timer-Commands | ✅ bis 3 | ✅ unbegrenzt |
-| Aktivitäts-Log (Ansicht) | ✅ | ✅ |
-| Twitch Ein-Klick-Login | ✅ | ✅ |
-| Mod-Web-Dashboard | ✅ für 1 Mod | ✅ alle Mods |
-| Team-Verwaltung (Mod einladen) | ✅ 1 Mod | ✅ unbegrenzt |
-| Audit-Log (Team-Aktivität) | ✅ | ✅ |
-| Heist-Master-Toggle | ✅ | ✅ |
-| To-Do-Liste | ✅ | ✅ |
-| **Aktivitäts-Log Export (CSV/JSON)** | — | ✅ |
-| **Raid-Shoutout-Queue** | — | ✅ |
-| **Auto-Clip (Chat-Velocity)** | — | ✅ |
-| Custom Commands | — | ✅ |
-| Channel-Points-Manager | — | ✅ |
-| Custom Alert-Animationen + -Sounds (pro Typ) | — | ✅ |
-| Excluded Accounts (Leaderboard-Filter) | — | ✅ |
-| Erweiterte Statistiken | — | ✅ |
-| Zombie-Hunde Modus | — | ✅ |
-| Umfragen (Tug-of-War) | — | ✅ |
-| AI Chat (`!ask` / `!ai`) | — | ✅ |
-| Heist-Cooldown konfigurierbar | — | ✅ |
-| Prioritäts-Support | — | ✅ |
+Heist Bot ist zu 100 % kostenlos — jedes Feature ist für jeden Streamer enthalten, ohne Abo und ohne Limits. Custom Commands, Eigene Alerts, Loyalty/XP, Zombie-Hunde-Modus, Umfragen, AI Chat, Raid-Shoutout, Auto-Clip, der Channel-Points-Manager, Excluded Accounts, erweiterte Statistiken, Aktivitäts-Log-Export, unbegrenzte Counter/Timer/Mods sowie ein konfigurierbarer Heist-Cooldown — alles von Anfang an gratis.
 
-### PRO aktivieren
-1. **[ko-fi.com/ronincannons](https://ko-fi.com/ronincannons)** besuchen
-2. **"Heist Bot PRO"** Mitgliedschaft kaufen
-3. Im Order-Note-Feld eingeben: `Twitch: DeinUsername`
-4. PRO wird automatisch aktiviert ✅
+Wer die Entwicklung unterstützen möchte, findet unter **[ko-fi.com/ronincannons](https://ko-fi.com/ronincannons)** eine Möglichkeit für freiwillige Spenden — ohne Gegenleistung, einfach als Dankeschön.
 
 ---
 
@@ -536,6 +503,23 @@ Heist Bot ist eine **professionelle Desktop-Anwendung** für Twitch-Streamer, di
 ---
 
 ## 📝 Changelog
+
+### [1.8.7] — 30.06.2026  ·  _"Eigene Alerts + Loyalty"_
+
+Bündelt alles seit 1.7.0, das jetzt die Desktop-App erreicht.
+
+#### ✨ Neue Features
+- **Eigene Alerts** — Erstelle deine eigenen Alerts (Name, Text, Icon, Akzentfarbe, Animation, Dauer, Sound, Bild/Video) und löse sie per **Chat-Befehl** oder **Channel-Points-Belohnung** aus, jeweils mit einstellbarem Cooldown pro Alert — oder manuell zum Testen. Verwaltung im Desktop **und** im Mod-Web-Dashboard; Media wird in die Cloud hochgeladen (Supabase Storage).
+- **Loyalty, XP & Level** — Zuschauer sammeln Währung und XP fürs Zuschauen und Chatten, holen sich den `!daily`-Bonus, steigen Level auf und prüfen ihren Stand mit `!rank`. Sub/VIP-Multiplikatoren, Tagesbonus und Obergrenzen sind konfigurierbar; eine **Top-Viewer**-Ansicht zeigt deine aktivsten Zuschauer.
+- **`!give` abschaltbar** — Optionaler Schalter, um das Verschenken von Währung (`!give` / `!schenken`) zu deaktivieren.
+- **Custom Commands an/aus** — Einzelne Custom-Commands aktivieren/deaktivieren, ohne sie zu löschen — im Desktop-Editor und im Mod-Dashboard.
+
+#### 🔧 Verbesserungen
+- **Neu sortierte Einstellungen** — Die Desktop-Einstellungen sind in klare Unter-Tabs gegliedert (Verbindung & Ausgabe / Spiel & Economy / Automatisierungen).
+- **Wegweiser zum Mod-Dashboard** — Deutlicherer Hinweis vom Desktop aufs Mod-Web-Dashboard, wo XP/Loyalty konfiguriert wird.
+- **Konfigurierbar statt fest** — Einstellbare Werte (z. B. der Custom-Alert-Cooldown) sind als Einstellungen verfügbar statt hart verankert.
+
+---
 
 ### [1.7.0] — 27.05.2026  ·  _"Team-Rechte + Web-Dashboard"_
 
@@ -552,7 +536,7 @@ ohne Desktop-Installation fürs Team.
 - **Heist-Master-Toggle** — Eine Checkbox, die das Heist-Spiel deaktiviert, während alle anderen Bot-Features weiterlaufen.
 - **Cloud-Sync für Konfiguration** — Spam-Filter, Counter und Alerts werden jetzt in Supabase synchronisiert. Desktop lädt beim Bot-Start, Web-Dashboard schreibt direkt in die Cloud.
 
-#### 💰 Preisanpassung
+#### 💰 Preisanpassung _(historisch — seit v1.10.0 ist alles kostenlos)_
 Einige Features benötigen jetzt **PRO**:
 - Mehr als **3 Counter** pro Kanal
 - Mehr als **1 Mod** pro Kanal (das Team-Feature ist FREE für ein Ein-Mod-Team)
