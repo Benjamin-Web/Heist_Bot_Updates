@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="renderer/assets/heist-icon.png" alt="Heist Bot Logo" width="120" height="120" style="border-radius: 20px;" />
+  <img src="renderer/assets/heist-icon.png" alt="Heist Bot Logo" width="120" height="120" />
 </p>
 
 <h1 align="center">Heist Bot</h1>
@@ -55,6 +55,9 @@ Run fair giveaways with ticket pricing, sub-only mode, minimum subscription requ
 
 ### 📊 Statistics Dashboard
 Track heist win rates, participation trends, raffle history, and top winners with interactive charts and filters.
+
+### 🎬 Overlay Standby Hint
+Between rounds the overlay shows a quiet bar with the join command and the possible bet, so viewers arriving between heists can see the game exists. It steps aside while a heist, result or raffle is running. Switchable off, and the dimming during a heist is adjustable from 0 to 90%.
 
 ### 🧟 Zombie Dog Mode
 An alternative game mode where zombie dogs attack a sausage factory. Different mechanics, custom Spine animations, and a unique theme.
@@ -251,6 +254,7 @@ If you'd like to support development, **[ko-fi.com/ronincannons](https://ko-fi.c
 | ✅ | **Loyalty, XP & Levels** _(1.8.0)_ — `!daily`, XP for watching/chatting, levels, `!rank`, multipliers, Top Viewer |
 | ✅ | **Custom Alerts** _(1.8.7)_ — build your own alerts, cloud media, chat-command & Channel-Points triggers, per-alert cooldown |
 | ✅ | **Animated characters in alerts** _(1.12.0)_ — your real robber (or zombie dog, by game mode) performs inside the alert card |
+| ✅ | **Overlay standby hint + offline overlay** _(1.13.0)_ — shows the join command between rounds; all libraries and fonts ship with the app, no CDN needed |
 | 🔜 | Hate-Raid & Follow-Bot Protection |
 | 🔜 | Smart-Mod (AI-assisted moderation) |
 | 🔜 | Tipping / Donations with Stripe |
@@ -440,6 +444,7 @@ Heist Bot ist eine **professionelle Desktop-Anwendung** für Twitch-Streamer, di
 | ⏱️ **Timer-Commands** | Automatische wiederkehrende Chat-Nachrichten in konfigurierbaren Intervallen |
 | 🎫 **Raffle-System** | Faire Gewinnspiele mit Ticket-Preisen, Sub-Only-Modus und automatischer Neuvergabe |
 | 📊 **Statistik-Dashboard** | Win-Rates, Teilnahme-Trends, Raffle-Historie und Top-Gewinner |
+| 🎬 **Standby-Hinweis im Overlay** | Zwischen zwei Runden steht unten ein ruhiger Hinweis mit Befehl und möglichem Einsatz — damit sehen auch Zuschauer, die zwischen zwei Raubzügen reinkommen, dass es das Spiel gibt. Abschaltbar, Abdunklung einstellbar |
 | 🧟 **Zombie-Hunde Modus** | Alternativer Spielmodus mit eigener Mechanik, Spine-Animationen und Zombie-Thema |
 | 🔔 **Stream-Alerts** | Animiertes OBS-Overlay für Follow/Sub/Cheer/Raid — mit Dauer, Lautstärke, Animationen & Custom-Sounds. Deine **echte Spielfigur** tritt in der Karte auf: der Räuber wirft bei Gift-Subs etwas herüber und kommt beim Raid angerannt. Im Zombie-Hunde-Modus übernimmt überall der Hund — automatisch nach Spielmodus, ohne Einstellung |
 | 🆕 **Eigene Alerts** | Erstelle eigene Alerts (Name, Text, Icon, Farbe, Animation, Dauer, Sound, Bild/Video) und löse sie per Chat-Befehl oder Channel-Points aus — mit Cooldown pro Alert. Verwaltung im Desktop **und** im Mod-Dashboard, Media in der Cloud |
