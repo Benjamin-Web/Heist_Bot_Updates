@@ -255,6 +255,7 @@ If you'd like to support development, **[ko-fi.com/ronincannons](https://ko-fi.c
 | ✅ | **Custom Alerts** _(1.8.7)_ — build your own alerts, cloud media, chat-command & Channel-Points triggers, per-alert cooldown |
 | ✅ | **Animated characters in alerts** _(1.12.0)_ — your real robber (or zombie dog, by game mode) performs inside the alert card |
 | ✅ | **Overlay standby hint + offline overlay** _(1.13.0)_ — shows the join command between rounds; all libraries and fonts ship with the app, no CDN needed |
+| ✅ | **Viewer cosmetics shop** _(1.14.0)_ — viewers style their own robber at www.heist-bot.pro/shop: skins, speech bubble, shower of gold. Purely cosmetic — heist outcomes and points are untouched |
 | 🔜 | Hate-Raid & Follow-Bot Protection |
 | 🔜 | Smart-Mod (AI-assisted moderation) |
 | 🔜 | Tipping / Donations with Stripe |
